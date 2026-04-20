@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Database Normalization Mastery</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700&family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- HERO SECTION -->
+    <header class="hero section-scroll">
+        <div class="hero-bg-shapes">
+            <div class="shape shape-1"></div>
+            <div class="shape shape-2"></div>
+        </div>
+        <div class="container hero-content">
+            <div class="badge">Mastering DBMS</div>
+            <h1 class="hero-title">Database<br><span>Normalization</span></h1>
+            <p class="hero-subtitle">The definitive guide to reducing redundancy and ensuring absolute data integrity.</p>
+            <div class="scroll-indicator">
+                <span>Start Learning</span>
+                <div class="mouse"><div class="wheel"></div></div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- WHY NORMALIZATION -->
+        <section class="section section-dark section-scroll" id="why">
+            <div class="container">
+                <div class="section-header text-center">
+                    <h2 class="title-glow">Why Normalize?</h2>
+                    <p>Without normalization, databases become chaotic, slow, and prone to severe errors.</p>
+                </div>
+                
+                <div class="bento-grid">
+                    <div class="bento-card reveal-up" style="--delay: 0s">
+                        <div class="bento-icon">🗂️</div>
+                        <h3>Reduce Redundancy</h3>
+                        <p>Stop storing the same data in multiple places. Save storage space and keep your architecture clean.</p>
+                    </div>
+                    <div class="bento-card reveal-up" style="--delay: 0.1s">
+                        <div class="bento-icon">🛡️</div>
+                        <h3>Improve Consistency</h3>
+                        <p>When data is stored in one place, updating it once updates it everywhere. No more conflicting records.</p>
+                    </div>
+                    <div class="bento-card reveal-up" style="--delay: 0.2s">
+                        <div class="bento-icon">⚡</div>
+                        <h3>Enhance Efficiency</h3>
+                        <p>Leaner tables mean faster queries, optimal indexing, and an overall highly performant database engine.</p>
+                    </div>
+                    <div class="bento-card bento-wide reveal-up" style="--delay: 0.3s">
+                        <div class="bento-icon">🚫</div>
+                        <h3>Eradicate Anomalies</h3>
+                        <p>Prevent fatal system errors caused by Insertion, Deletion, and Update anomalies when managing records.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- THE NORMAL FORMS -->
+        <section class="section section-light section-scroll" id="forms">
+            <div class="container">
+                <div class="section-header text-center">
+                    <h2 class="text-gradient">The Normalization Process</h2>
+                    <p>A step-by-step evolutionary timeline to achieve perfect data structure.</p>
+                </div>
+
+                <div class="forms-timeline">
+                    
+                    <!-- 1NF -->
+                    <div class="form-card reveal-left">
+                        <div class="form-num">1NF</div>
+                        <div class="form-content">
+                            <h3>First Normal Form</h3>
+                            <h4>Rule: Atomic Values</h4>
+                            <p>Every column must hold a single, indivisible value. No repeating groups or arrays hidden inside a single cell.</p>
+                        </div>
+                    </div>
+
+                    <!-- 2NF -->
+                    <div class="form-card reveal-right">
+                        <div class="form-num">2NF</div>
+                        <div class="form-content">
+                            <h3>Second Normal Form</h3>
+                            <h4>Rule: No Partial Dependency</h4>
+                            <p>Must be in 1NF. All non-key attributes must depend on the <strong>entire</strong> primary key, not just a part of it (especially relevant in composite keys).</p>
+                        </div>
+                    </div>
+
+                    <!-- 3NF -->
+                    <div class="form-card reveal-left">
+                        <div class="form-num" style="background: linear-gradient(135deg, #FF6B6B, #C0392B)">3NF</div>
+                        <div class="form-content">
+                            <h3>Third Normal Form</h3>
+                            <h4>Rule: No Transitive Dependency</h4>
+                            <p>Must be in 2NF. Non-key attributes must depend strictly on the primary key, and <strong>never</strong> on other non-key attributes.</p>
+                        </div>
+                    </div>
+
+                    <!-- BCNF -->
+                    <div class="form-card reveal-right">
+                        <div class="form-num" style="background: linear-gradient(135deg, #9B59B6, #8E44AD)">BCNF</div>
+                        <div class="form-content">
+                            <h3>Boyce-Codd Normal Form</h3>
+                            <h4>Rule: Strict Determinants</h4>
+                            <p>A stronger version of 3NF. For every non-trivial functional dependency X → Y, X <strong>must</strong> be a superkey.</p>
+                        </div>
+                    </div>
+
+                    <!-- 4NF -->
+                    <div class="form-card reveal-left">
+                        <div class="form-num" style="background: linear-gradient(135deg, #34495E, #2C3E50)">4NF</div>
+                        <div class="form-content">
+                            <h3>Fourth Normal Form</h3>
+                            <h4>Rule: No Multi-valued Dependencies</h4>
+                            <p>Must be in BCNF. A single record type shouldn't contain two or more independent, multi-valued facts about an entity.</p>
+                        </div>
+                    </div>
+
+                    <!-- 5NF -->
+                    <div class="form-card reveal-right">
+                        <div class="form-num" style="background: linear-gradient(135deg, #F39C12, #D35400)">5NF</div>
+                        <div class="form-content">
+                            <h3>Fifth Normal Form</h3>
+                            <h4>Rule: No Join Dependencies</h4>
+                            <p>Must be in 4NF. Table cannot be broken down into smaller tables without losing data when rejoined (Project-Join Normal Form).</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- VISUAL TRANSFORMATION -->
+        <section class="section section-dark section-scroll" id="transformation">
+            <div class="container container-large">
+                <div class="section-header text-center">
+                    <h2>Visual Transformation</h2>
+                    <p>Witness the breakdown of chaotic unnormalized data into a clean, relational structure.</p>
+                </div>
+
+                <div class="transform-showcase">
+                    
+                    <!-- LEFT: BEFORE -->
+                    <div class="data-block before-block reveal-up" style="--delay: 0s">
+                        <div class="data-header bad">
+                            <span class="status">⚠️ Unnormalized / Chaos</span>
+                        </div>
+                        <div class="table-frame">
+                            <table class="modern-table bad-table">
+                                <thead>
+                                    <tr>
+                                        <th>StudentID</th><th>StudentName</th><th>CourseID</th><th>CourseName</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="issue"><td>1</td><td>Alice</td><td>101</td><td>Math</td></tr>
+                                    <tr class="issue"><td>1</td><td>Alice</td><td>102</td><td>Science</td></tr>
+                                    <tr><td>2</td><td>Bob</td><td>103</td><td>History</td></tr>
+                                    <tr class="fatal"><td>2</td><td>Reading, Swim</td><td>101</td><td>Math</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="block-annotation">
+                            <p><strong>Issues:</strong> Redundant details for Alice. Multiple values packed into one cell for Bob. If a Course name changes, multiple rows must be updated.</p>
+                        </div>
+                    </div>
+
+                    <div class="transform-arrow">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14m-7-7l7 7-7 7"/></svg>
+                    </div>
+
+                    <!-- RIGHT: AFTER -->
+                    <div class="data-block after-block reveal-up" style="--delay: 0.3s">
+                        <div class="data-header good">
+                            <span class="status">✅ Normalized (3NF+)</span>
+                        </div>
+                        <div class="relational-grid">
+                            
+                            <div class="table-frame mini">
+                                <h4>📚 Students Table</h4>
+                                <table class="modern-table">
+                                    <thead><tr><th>StudentID 🗝️</th><th>Name</th></tr></thead>
+                                    <tbody>
+                                        <tr><td>1</td><td>Alice</td></tr>
+                                        <tr><td>2</td><td>Bob</td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <div class="table-frame mini">
+                                <h4>🏫 Courses Table</h4>
+                                <table class="modern-table">
+                                    <thead><tr><th>CourseID 🗝️</th><th>CourseName</th></tr></thead>
+                                    <tbody>
+                                        <tr><td>101</td><td>Math</td></tr>
+                                        <tr><td>102</td><td>Science</td></tr>
+                                        <tr><td>103</td><td>History</td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <div class="table-frame mini relation-table">
+                                <h4>🔗 Enrollments (Bridge)</h4>
+                                <table class="modern-table">
+                                    <thead><tr><th>StudentID</th><th>CourseID</th></tr></thead>
+                                    <tbody>
+                                        <tr><td>1</td><td>101</td></tr>
+                                        <tr><td>1</td><td>102</td></tr>
+                                        <tr><td>2</td><td>103</td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                        </div>
+                        <div class="block-annotation target">
+                            <p><strong>Resolved:</strong> Data is split into isolated entities. The bridge table links them purely by ID. Updating a course name now requires changing exactly one row.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ANOMALIES DEEP DIVE -->
+        <section class="section section-light section-scroll" id="anomalies">
+            <div class="container text-center">
+                <h2>The 3 Deadly Anomalies</h2>
+                <p style="margin-bottom: 40px; color: #64748B;">Why you must normalize.</p>
+                
+                <div class="anomaly-cards">
+                    <div class="anomaly-card reveal-up" style="--delay: 0s">
+                        <div class="icon insert">+</div>
+                        <h3>Insertion</h3>
+                        <p>Cannot add a new blank Course to the database unless a Student enrolls in it first, because StudentID is required.</p>
+                    </div>
+                    
+                    <div class="anomaly-card reveal-up" style="--delay: 0.15s">
+                        <div class="icon update">↻</div>
+                        <h3>Update</h3>
+                        <p>Changing the name of "Math" to "Advanced Math" requires updating multiple rows. Miss one, and the database is corrupted.</p>
+                    </div>
+
+                    <div class="anomaly-card reveal-up" style="--delay: 0.3s">
+                        <div class="icon delete">-</div>
+                        <h3>Deletion</h3>
+                        <p>If Bob drops History (the only student in it), deleting his record might delete the entire "History" course from the system.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="container">
+            <h3>Database Normalization</h3>
+            <p>Built for clarity, speed, and absolute data integrity.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
